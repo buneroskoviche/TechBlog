@@ -10,18 +10,19 @@ router.get('/', async (req, res) => {
 
     const posts = postData.map(post => post.get({ plain: true }));
 
-    // res.render('homepage', {
-    //   users,
-    //   loggedIn: req.session.loggedIn,
-    // });
-    res.status(200).json(posts);
+    res.render('home', {
+      posts,
+      loggedIn: true,
+      // loggedIn: req.session.logged_in,
+    });
+    // res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
