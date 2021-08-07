@@ -42,6 +42,8 @@ const login = async (event) => {
         if(response.ok) {
             alert('Successfully logged in!')
             document.location.replace('/');
+        } else {
+            alert('Invalid email or password');
         }
 
     } else {
