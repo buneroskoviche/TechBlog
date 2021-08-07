@@ -1,4 +1,4 @@
-<div class="container post p-0 bg-light">
+<div class="container post p-0 bg-light" id="{{post.id}}">
     <div class="postHead w-100 p-3 text-light d-flex justify-content-between">
         <h1>{{post.title}}</h1>
         <h4>{{#if post.user.name}}{{post.user.name}}{{else}}Anonymous{{/if}}: {{formatDate post.createdAt}}</h4>
@@ -13,8 +13,17 @@
 </div>
 {{/each}}
 
+<form class="container invisible" id="newCommentForm">
+    <div class="form-group">
+        <label for="addNewComment">Write your comment here</label>
+        <textarea class="form-control mb-2" id="newCommentText" rows="3"></textarea>
+        <button type="submit" class="btn text-light" style="background-color: darkslategray;">Submit</button>
+    </div>
+</form>
+
 {{#if loggedIn}}
-<button class="btn text-light" id="newCommentButton" style="background-color: darkslategray;">Add a Comment</button>
+<button class="btn text-light" id="newCommentBtn" style="background-color: darkslategray;">Add a Comment</button>
+<script src="/js/comment.js"></script>
 {{else}}
 <a class="btn text-light" style="background-color: darkslategray;" href="/login">Log in to add a comment!</a>
 {{/if}}
