@@ -13,13 +13,6 @@
 </div>
 {{/each}}
 
-{{#if loggedIn}}
-<button class="btn text-light" id="newCommentBtn" style="background-color: darkslategray;">Add a Comment</button>
-<script src="/js/comment.js"></script>
-{{else}}
-<a class="btn text-light" style="background-color: darkslategray;" href="/login">Log in to add a comment!</a>
-{{/if}}
-
 <form class="container invisible" id="newCommentForm">
     <div class="form-group">
         <label for="addNewComment">Write your comment here</label>
@@ -27,3 +20,10 @@
         <button type="submit" class="btn text-light" style="background-color: darkslategray;">Submit</button>
     </div>
 </form>
+
+{{#if loggedIn}}
+<button class="btn text-light" id="newCommentBtn" style="background-color: darkslategray;">Add a Comment</button>
+<script src="/js/comment.js"></script>
+{{else}}
+<a class="btn text-light" style="background-color: darkslategray;" href="/login">Log in to add a comment!</a>
+{{/if}}
