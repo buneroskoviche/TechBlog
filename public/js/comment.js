@@ -2,8 +2,8 @@ const $newCommentBtn = document.querySelector('#newCommentBtn');
 const $newCommentForm = document.querySelector('#newCommentForm');
 
 const revealForm = () => {
-    $newCommentBtn.classList.add('invisible');
-    $newCommentForm.classList.remove('invisible');
+    $newCommentBtn.classList.add('d-none');
+    $newCommentForm.classList.remove('d-none');
     return;
 }
 
