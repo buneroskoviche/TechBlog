@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
 // const session = require('express-session');
+const helpers = require('./utils');
 const exphbs = require('express-handlebars');
 
 const sequelize = require('./config/connection');
@@ -22,7 +23,7 @@ const PORT = process.env.PORT || 3001;
 
 // app.use(session(sess));
 
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
