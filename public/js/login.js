@@ -6,7 +6,7 @@ const signUp = async (event) => {
     const password = document.querySelector('#signupPassword').value.trim();
 
     if(name && email && password) {
-        const response = await fetch('/signup', {
+        const response = await fetch('api/users/signup', {
             method: 'POST',
             body: JSON.stringify({name, email, password}),
             headers: { 'Content-Type': 'application/json' },
@@ -40,6 +40,7 @@ const login = async (event) => {
         });
 
         if(response.ok) {
+            alert('Successfully logged in!')
             document.location.replace('/');
         }
 
