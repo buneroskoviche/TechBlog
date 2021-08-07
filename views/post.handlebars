@@ -12,3 +12,9 @@
     <p class="p-2">{{comment.text}}</p>
 </div>
 {{/each}}
+
+{{#if loggedIn}}
+<button class="btn text-light" id="newCommentButton" style="background-color: darkslategray;">Add a Comment</button>
+{{else}}
+<a class="btn text-light" style="background-color: darkslategray;" href="/login">Log in to add a comment!</a>
+{{/if}}

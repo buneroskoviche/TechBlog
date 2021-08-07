@@ -10,12 +10,11 @@ router.get('/:id', async (req, res) => {
       
       const post = postData.get({ plain: true });
       const comments = post.comments;
-      console.log(comments);
 
       res.render('post', {
         post,
         comments,
-        loggedIn: true,
+        loggedIn: false,
         // loggedIn: req.session.logged_in,
       });
     // res.status(200).json(post);
