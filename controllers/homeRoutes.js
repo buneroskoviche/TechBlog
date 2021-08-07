@@ -12,8 +12,7 @@ router.get('/', async (req, res) => {
 
     res.render('home', {
       posts,
-      loggedIn: false,
-      // loggedIn: req.session.logged_in,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -27,7 +26,7 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    res.status(200).json(newUser);
+    res.status(200).json({message: 'New user created!'});
   } catch (e) {
     console.log(e);
     res.status(500).json(e);
