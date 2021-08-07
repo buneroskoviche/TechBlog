@@ -29,7 +29,20 @@ router.post('/:id/comments', async (req, res) => {
       post_id: req.params.id,
       user_id: req.session.user_id,
     });
-    res.status(201).json({message: 'Comment Added.'});
+    res.status(201).json({message: 'Comment added.'});
+  } catch (e) {
+    res.status(500).json(e);
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    await Post.create({
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id,
+    });
+    res.status(201).json({message: 'Post created.'})
   } catch (e) {
     res.status(500).json(e);
   }

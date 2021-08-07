@@ -5,4 +5,16 @@
 </a>
 {{/each}}
 
-<button class="btn text-light" id="newPostBtn" style="background-color: darkslategray;">Create a post</button>
+<form class="container d-none" id="newPostForm">
+    <div class="form-group">
+        <label for="addNewPostTitle">Post Title</label>
+        <textarea class="form-control mb-2" id="newPostTitle" rows="1"></textarea>
+        <label for="addNewPostContent">Write your post here</label>
+        <textarea class="form-control mb-2" id="newPostContent" rows="3"></textarea>
+        <button type="submit" class="btn text-light" style="background-color: darkslategray;">Submit</button>
+    </div>
+</form>
+
+<button class="btn text-light mt-2" id="newPostBtn" style="background-color: darkslategray;">Create a post</button>
+
+<script src="/js/post.js"></script>
