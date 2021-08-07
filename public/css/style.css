@@ -13,3 +13,17 @@
 .postBox p{
     font-size: medium;
 }
+
+.post {
+    border: 4px solid darkslategray;
+    border-radius: 3px;
+}
+
+.postHead {
+    background-color: darkslategray;
+}
+
+.comment {
+    border: 4px solid darkslategray;
+    border-radius: 3px;
+}

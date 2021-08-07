@@ -1,6 +1,14 @@
-{{#each posts as |post|}}
-<div class="m-3 postBox">
-    <h3 class="text-light p-2">{{post.title}}</h3>
-    <p class="text-dark p-2">{{post.content}}</p>
+<div class="container post p-0 bg-light">
+    <div class="postHead w-100 p-3 text-light d-flex justify-content-between">
+        <h1>{{post.title}}</h1>
+        <h4>{{#if post.user.name}}{{post.user.name}}{{else}}Anonymous{{/if}}</h4>
+    </div>
+    <p class="postContent p-2">{{post.content}}</p>
+</div>
+
+{{#each comments as |comment|}}
+<div class="container comment p-0 my-3 bg-light shadow">
+    <h5 class="postHead w-100 p-2 text-light">{{#if comment.user.name}}{{comment.user.name}}{{else}}Anonymous{{/if}}</h5>
+    <p class="p-2">{{comment.text}}</p>
 </div>
 {{/each}}
