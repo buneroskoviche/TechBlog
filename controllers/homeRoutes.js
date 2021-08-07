@@ -12,20 +12,33 @@ router.get('/', async (req, res) => {
 
     res.render('home', {
       posts,
-      loggedIn: true,
+      loggedIn: false,
       // loggedIn: req.session.logged_in,
     });
-    // res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    res.status(200).json(newUser);
+  } catch (e) {
+    console.log(e);
+    res.status(500).json(e);
+  }
+});
+
 router.get('/login', (req, res) => {
-  // if (req.session.logged_in) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
 
   res.render('login');
 });
