@@ -1,5 +1,8 @@
 # The Tech Blog
 
+![screenshot3](https://user-images.githubusercontent.com/80650523/128614920-50f5da68-746d-468a-8584-4d4b7dd21cc8.PNG)
+
+![screenshot1](https://user-images.githubusercontent.com/80650523/128614922-18b1c7e2-7696-41ec-aecb-98dd7b9aafae.PNG)
 
 ## Table of Contents
 * [Description](#description)
